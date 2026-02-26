@@ -16,7 +16,7 @@ export const ThemeProvider = ({ children }) => {
     if (saved) {
       return saved === "dark";
     }
-    return false; // Default to light mode on first visit
+    return true; // Default to dark mode on first visit
   });
 
   useEffect(() => {

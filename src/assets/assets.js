@@ -17,6 +17,8 @@ import { TbBrandCpp, TbBrandFlutter, TbBrandMysql, TbBrandCSharp, TbBrandPhp } f
 import { SiDotnet, SiMicrosoftsqlserver } from "react-icons/si";
 import { IoLogoGithub } from "react-icons/io";
 
+const base = import.meta.env.BASE_URL;
+
 // Footer Social Icons
 // This array holds the social media icons and links for the footer section.
 // If you wish to add or remove any icons, modify the 'footerIcons' array below.
@@ -51,7 +53,7 @@ const navElements = ["About", "Education", "Skills", "Projects", "Contact"];
 // This object contains all the details for the "About" section of the portfolio.
 // Replace dummy values with your actual information.
 const AboutPage = {
-  authorProfile: "/images/Profile.jpeg", // Your profile image link
+  authorProfile: `${base}images/Profile.jpeg`, // Your profile image link
   authorDescription:
   "Fresh graduate and aspiring Software Developer with a passion for building intuitive, user-focused web applications. I thrive on turning ideas into reality through clean code and creative problem-solving. Eager to contribute to innovative teams and grow as a developer while delivering impactful digital experiences.", // Short bio or description about yourself
   getInTouchUrl: "#Contact", 
@@ -129,18 +131,18 @@ const projectsPage = [
     challenges: "Integrating the OpenAI API with Flutter required careful handling of asynchronous operations and error states. Managing the state across multiple screens while keeping the UI responsive was another significant challenge that was solved using Provider for state management.",
     learnings: "This project deepened my understanding of Flutter state management patterns, working with REST APIs, and implementing Firebase services. I also learned about prompt engineering for generating quality MCQ questions from lecture content.",
     screenshots: [
-      { src: "/projects/learnsphere/Homescreen.jpeg", caption: "Home Screen" },
-      { src: "/projects/learnsphere/Google sign in.jpeg", caption: "Google Sign In" },
-      { src: "/projects/learnsphere/AI Tutor Chat.jpeg", caption: "AI Tutor Chat" },
-      { src: "/projects/learnsphere/Challenge Mode.jpeg", caption: "Challenge Mode" },
-      { src: "/projects/learnsphere/Generated MCQs.jpeg", caption: "Generated MCQs" },
-      { src: "/projects/learnsphere/Performance Metrics.jpeg", caption: "Performance Metrics" },
-      { src: "/projects/learnsphere/Corrections.jpeg", caption: "Corrections" },
-      { src: "/projects/learnsphere/Performance tracking.jpeg", caption: "Performance Tracking" },
-      { src: "/projects/learnsphere/Lecture Storage.jpeg", caption: "Lecture Storage" },
-      { src: "/projects/learnsphere/Lecture Notes Storage.jpeg", caption: "Lecture Notes Storage" },
-      { src: "/projects/learnsphere/PDF and Plain text summarisation.jpeg", caption: "PDF and Plain Text Summarisation" },
-      { src: "/projects/learnsphere/Summarised text list.jpeg", caption: "Summarised Text List" },
+      { src: `${base}projects/learnsphere/Homescreen.jpeg`, caption: "Home Screen" },
+      { src: `${base}projects/learnsphere/Google sign in.jpeg`, caption: "Google Sign In" },
+      { src: `${base}projects/learnsphere/AI Tutor Chat.jpeg`, caption: "AI Tutor Chat" },
+      { src: `${base}projects/learnsphere/Challenge Mode.jpeg`, caption: "Challenge Mode" },
+      { src: `${base}projects/learnsphere/Generated MCQs.jpeg`, caption: "Generated MCQs" },
+      { src: `${base}projects/learnsphere/Performance Metrics.jpeg`, caption: "Performance Metrics" },
+      { src: `${base}projects/learnsphere/Corrections.jpeg`, caption: "Corrections" },
+      { src: `${base}projects/learnsphere/Performance tracking.jpeg`, caption: "Performance Tracking" },
+      { src: `${base}projects/learnsphere/Lecture Storage.jpeg`, caption: "Lecture Storage" },
+      { src: `${base}projects/learnsphere/Lecture Notes Storage.jpeg`, caption: "Lecture Notes Storage" },
+      { src: `${base}projects/learnsphere/PDF and Plain text summarisation.jpeg`, caption: "PDF and Plain Text Summarisation" },
+      { src: `${base}projects/learnsphere/Summarised text list.jpeg`, caption: "Summarised Text List" },
     ],
   },
   {
@@ -164,14 +166,14 @@ const projectsPage = [
     challenges: "Designing the database schema to handle complex relationships between books, members, and loans while maintaining data integrity was challenging.",
     learnings: "This project strengthened my skills in .NET development, SQL database design, and building multi-role applications. I gained experience in implementing CRUD operations efficiently and managing database relationships.",
     screenshots: [
-      { src: "/projects/library-management/HomePage.png", caption: "Home Page" },
-      { src: "/projects/library-management/Sign Up.png", caption: "Sign Up" },
-      { src: "/projects/library-management/Browse Books.png", caption: "Browse Books" },
-      { src: "/projects/library-management/Book inventory Management.png", caption: "Book Inventory Management" },
-      { src: "/projects/library-management/Admin Author Management.png", caption: "Admin Author Management" },
-      { src: "/projects/library-management/Member Management.png", caption: "Member Management" },
-      { src: "/projects/library-management/Book issuing.png", caption: "Book Issuing" },
-      { src: "/projects/library-management/SSMS Tables.png", caption: "SSMS Database Tables" },
+      { src: `${base}projects/library-management/HomePage.png`, caption: "Home Page" },
+      { src: `${base}projects/library-management/Sign Up.png`, caption: "Sign Up" },
+      { src: `${base}projects/library-management/Browse Books.png`, caption: "Browse Books" },
+      { src: `${base}projects/library-management/Book inventory Management.png`, caption: "Book Inventory Management" },
+      { src: `${base}projects/library-management/Admin Author Management.png`, caption: "Admin Author Management" },
+      { src: `${base}projects/library-management/Member Management.png`, caption: "Member Management" },
+      { src: `${base}projects/library-management/Book issuing.png`, caption: "Book Issuing" },
+      { src: `${base}projects/library-management/SSMS Tables.png`, caption: "SSMS Database Tables" },
     ],
   },
   // Add more projects or remove the ones you don't need
