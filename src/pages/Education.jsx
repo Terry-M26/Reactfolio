@@ -12,10 +12,10 @@ const Education = () => {
           <PageTitle title={"Education"} />
           <div className="grid grid-cols-1 bedar-sc2:grid-cols-2 gap-4">
             {EducationPage.map(
-              ({ degreeType, graduationYear, institution, institutionUrl }) => (
+              ({ degreeType, graduationYear, institution, institutionUrl }, index) => (
                 <div
-                  key={2}
-                  className="flex flex-col gap-4 bg-mainColor text-white rounded-md p-5 bedar-sc2:p-8 shadow-md shadow-[#000]/15"
+                  key={institution}
+                  className={`flex flex-col gap-4 bg-[var(--bg-card)] text-[var(--text-on-card)] rounded-md p-5 bedar-sc2:p-8 shadow-md shadow-[#000]/15 card-hover animate-fadeInUp transition-colors duration-300 delay-${(index + 1) * 100}`}
                 >
                   <div>
                     <div>{graduationYear}</div>

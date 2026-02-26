@@ -4,12 +4,58 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --bg-primary: #fafafa;
+  --bg-card: rgba(245, 255, 245, 0.9);
+  --bg-card-hover: rgba(240, 255, 240, 0.95);
+  --accent: #eab308;
+  --accent-green: #16a34a;
+  --text-primary: #1c1917;
+  --text-secondary: #57534e;
+  --text-on-card: #1c1917;
+  --navbar-bg: rgba(255, 255, 255, 0.9);
+  --border-color: rgba(22, 163, 74, 0.3);
+}
+
+.dark {
+  --bg-primary: #0a0a0f;
+  --bg-card: rgba(20, 10, 25, 0.85);
+  --bg-card-hover: rgba(30, 15, 40, 0.9);
+  --accent: #e879f9;
+  --accent-secondary: #a855f7;
+  --text-primary: #f0e6f6;
+  --text-secondary: #c4b5d0;
+  --text-on-card: #f0e6f6;
+  --navbar-bg: rgba(10, 10, 15, 0.9);
+  --border-color: rgba(168, 85, 247, 0.3);
+}
+
 html, body{
     font-family: "Inter", sans-serif;
-    color: #212835;
+    color: var(--text-primary);
+    background-color: var(--bg-primary);
     scroll-behavior: smooth;
     overflow-x: hidden;
     scroll-padding: 110px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Light mode gradient background - white with green bottom-right, yellow top-left */
+html:not(.dark), 
+html:not(.dark) body {
+    background: 
+      radial-gradient(ellipse at top left, rgba(251, 191, 36, 0.12) 0%, transparent 40%),
+      radial-gradient(ellipse at bottom right, rgba(22, 163, 74, 0.15) 0%, rgba(22, 163, 74, 0.05) 30%, #fafafa 60%);
+    background-attachment: fixed;
+}
+
+/* Dark mode gradient background - black with purple bottom-right, pink top-left */
+.dark body,
+html.dark {
+    background: 
+      radial-gradient(ellipse at top left, rgba(232, 121, 249, 0.12) 0%, transparent 35%),
+      radial-gradient(ellipse at bottom right, #1a0a2e 0%, #0f0a1a 25%, #0a0a0f 60%);
+    background-attachment: fixed;
 }
 
 .custom-scrollbar::-webkit-scrollbar {
@@ -52,4 +98,239 @@ html, body{
   100%{
     background-position: 100% 0;
   }
+}
+
+/* Entrance Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+/* Staggered animation delays */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+
+/* Carousel slide-in animation */
+@keyframes carouselSlideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.carousel-slide-in {
+  animation: carouselSlideIn 0.35s ease-out forwards;
+}
+
+/* Animated shapes behind profile picture */
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes float-1 {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  25% { transform: translateY(-15px) translateX(5px); }
+  50% { transform: translateY(-5px) translateX(10px); }
+  75% { transform: translateY(-20px) translateX(-5px); }
+}
+
+@keyframes float-2 {
+  0%, 100% { transform: translateY(0) translateX(0) rotate(45deg); }
+  33% { transform: translateY(-20px) translateX(-10px) rotate(60deg); }
+  66% { transform: translateY(-10px) translateX(15px) rotate(30deg); }
+}
+
+@keyframes float-3 {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-25px) scale(1.1); }
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.15; transform: scale(1); }
+  50% { opacity: 0.25; transform: scale(1.1); }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 25s linear infinite;
+}
+
+.animate-float-1 {
+  animation: float-1 6s ease-in-out infinite;
+}
+
+.animate-float-2 {
+  animation: float-2 8s ease-in-out infinite;
+}
+
+.animate-float-3 {
+  animation: float-3 5s ease-in-out infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 4s ease-in-out infinite;
+}
+
+/* Card hover effects */
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Skill icon hover */
+.skill-icon {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.skill-icon:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(251, 191, 36, 0.5);
+}
+
+/* Dark mode pink glow for skill icons */
+.dark .skill-icon:hover {
+  box-shadow: 0 0 25px rgba(232, 121, 249, 0.6);
+}
+
+/* Button hover enhancement */
+.btn-hover {
+  transition: all 0.3s ease;
+}
+.btn-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Nav link underline animation */
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #fedf89;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+.nav-link:hover::after {
+  width: 80%;
+}
+
+/* Nav link underline color for dark mode */
+.dark .nav-link::after {
+  background: var(--accent);
+}
+
+/* Social icon bounce */
+.social-icon {
+  transition: transform 0.2s ease;
+}
+.social-icon:hover {
+  transform: translateY(-3px);
+}
+
+/* Dark mode card hover with pink/purple shadow */
+.dark .card-hover:hover {
+  box-shadow: 0 12px 30px rgba(232, 121, 249, 0.3), 0 0 20px rgba(168, 85, 247, 0.25);
+}
+
+/* Dark mode button hover with pink glow */
+.dark .btn-hover:hover {
+  box-shadow: 0 4px 15px rgba(232, 121, 249, 0.4);
+}
+
+/* Dark mode card base styling with purple border */
+.dark .card-hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(168, 85, 247, 0.25);
+  backdrop-filter: blur(10px);
+}
+
+/* Dark mode skill icon base styling */
+.dark .skill-icon {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(168, 85, 247, 0.2);
+}
+
+/* Dark mode skeleton loading */
+.dark .skeleton::before {
+  background: linear-gradient(90deg, #0a0a0f, #15101a, #0a0a0f);
+}
+
+/* Pink accent glow for headings in dark mode */
+.dark .accent-glow {
+  text-shadow: 0 0 20px rgba(232, 121, 249, 0.4);
+}
+
+/* Dark mode scrollbar */
+.dark .custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(168, 85, 247, 0.5);
+}
+.dark .custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* Light mode card base styling with green border */
+html:not(.dark) .card-hover {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(22, 163, 74, 0.25);
+  backdrop-filter: blur(10px);
+}
+
+/* Light mode card hover with yellow shadow */
+html:not(.dark) .card-hover:hover {
+  box-shadow: 0 12px 30px rgba(234, 179, 8, 0.25), 0 0 15px rgba(234, 179, 8, 0.15);
+}
+
+/* Light mode skill icon base styling */
+html:not(.dark) .skill-icon {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(22, 163, 74, 0.2);
+}
+
+/* Light mode skill icon hover - green glow */
+html:not(.dark) .skill-icon:hover {
+  box-shadow: 0 0 20px rgba(22, 163, 74, 0.4);
+}
+
+/* Light mode button hover */
+html:not(.dark) .btn-hover:hover {
+  box-shadow: 0 4px 15px rgba(22, 163, 74, 0.25);
 }

@@ -2,6 +2,7 @@ import { imgLogo, textLogo, navElements } from "../../assets/assets";
 import { useEffect, useState } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { IoClose } from "react-icons/io5";
+import ThemeToggle from "../ThemeToggle/ThemeToggle";
 
 const Navbar = ({ activeElem, setActiveElem }) => {
   const [isMenuHidden, setIsMenuHidden] = useState(true);
@@ -31,7 +32,7 @@ const Navbar = ({ activeElem, setActiveElem }) => {
        z-50`}
     >
       <div
-        className={`flex items-center justify-between px-5 bedar-sc2:px-10 bedar-sc1:px-10 border rounded-full border-zinc-200 bg-[#ffffff85] backdrop-blur-[20px] backdrop-saturate-[180%]`}
+        className={`flex items-center justify-between px-5 bedar-sc2:px-10 bedar-sc1:px-10 border rounded-full border-[var(--border-color)] bg-[var(--navbar-bg)] backdrop-blur-[20px] backdrop-saturate-[180%] transition-colors duration-300`}
       >
         {imgLogo ? (
           <img src={imgLogo} />
@@ -46,12 +47,12 @@ const Navbar = ({ activeElem, setActiveElem }) => {
         )}
         <div className="flex gap-2">
           {navElements.map((elem) => (
-            <div key={1}>
+            <div key={elem}>
               <a
                 href={`#${elem}`}
                 onClick={() => setActiveElem(elem)}
                 className={`hidden bedar-sc2:flex text-[1rem] font-[500] ${
-                  activeElem === elem && "bg-mainColor text-white"
+                  activeElem === elem ? "bg-mainColor text-white" : "nav-link"
                 } py-2 px-4 rounded-full transition-all ease-in`}
               >
                 {elem}
@@ -59,16 +60,19 @@ const Navbar = ({ activeElem, setActiveElem }) => {
             </div>
           ))}
         </div>
-        <button
-          onClick={toggleMenu}
-          className={`text-textColor flex bedar-sc2:hidden`}
-        >
-          {isMenuHidden ? (
-            <RxHamburgerMenu className="h-6 w-6" />
-          ) : (
-            <IoClose className="h-6 w-6" />
-          )}
-        </button>
+        <div className="flex items-center gap-2">
+          <ThemeToggle />
+          <button
+            onClick={toggleMenu}
+            className={`flex bedar-sc2:hidden`}
+          >
+            {isMenuHidden ? (
+              <RxHamburgerMenu className="h-6 w-6" />
+            ) : (
+              <IoClose className="h-6 w-6" />
+            )}
+          </button>
+        </div>
       </div>
       <div
         className={`mobile-menu flex fixed backdrop-blur bedar-sc2:hidden flex-col bg-[#ffffff] border-zinc-200 py-4 px-5 rounded-md gap-2 right-[1.22rem] top-[5rem] z-10 shadow-md border  ${
