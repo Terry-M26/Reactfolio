@@ -1,5 +1,7 @@
 # Terry Mardaymootoo — Portfolio
 
+🔗 **Live Site:** [https://terry-m26.github.io/Reactfolio/](https://terry-m26.github.io/Reactfolio/)
+
 Personal developer portfolio showcasing my projects, skills, and experience as an aspiring Software Developer.
 
 ## About
