@@ -68,7 +68,7 @@ const AboutPage = {
 // You can add more education objects if necessary.
 const EducationPage = [
   {
-    graduationYear: "2026 (Final Semester)",
+    graduationYear: "2026",
     degreeType: "BSc (Hons) Computer Science with Network Security",
     institution: "University of Technology, Mauritius",
     institutionUrl: "https://utm.ac.mu",
