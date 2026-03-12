@@ -148,23 +148,26 @@ const projectsPage = [
   {
     id: "library-management", // URL-friendly unique ID (used in routing)
     projectName: "Library Management System", // Project name
-    projectDescription: "Complete Library Management system with admin and user interface and CRUD operations on books, members and loans using .Net and SQL Server Management Studio", // Project description
-    projectURL: "", // Optional: Project demo link (if hosted)
+    projectDescription: "Modern library management system migrated from ASP.NET Web Forms to ASP.NET Core 8 Razor Pages with dark-themed UI for book management, member services, and admin operations", // Project description
+    projectURL: "https://terry-m26.github.io/LibraryManagementSystem/", // Optional: Project demo link (if hosted)
     githubRepositoryURL: "https://github.com/Terry-M26/LibraryManagementSystem", // Optional: GitHub repository link
-    tags: "C#, .Net, SSMS", // Tech stack used in the project
-    date: "November 2024", // Project duration
+    tags: "ASP.NET Core, Razor Pages, C#, SQL Server, Bootstrap, jQuery", // Tech stack used in the project
+    date: "November 2024 - March 2026", // Project duration
     // Detail page fields - replace with your actual content
-    fullDescription: "A full-featured Library Management System built with .NET and SSMS, featuring separate interfaces for administrators and regular users. The system handles complete CRUD operations for books, members, and loan transactions with a clean and intuitive UI.",
+    fullDescription: "LibraryMS is a modern, full-featured library management system originally built with ASP.NET Web Forms (.NET Framework 4.7.2) and successfully migrated to ASP.NET Core 8 Razor Pages. The system provides a clean dark-themed UI for both members and administrators to manage books, authors, publishers, and book issuing operations with secure authentication and comprehensive CRUD functionality.",
     features: [
-      "Admin dashboard with system overview and statistics",
-      "Complete CRUD operations for books, members, and book issuings",
-      "User authentication with role-based access control",
-      "Book search and filtering functionality",
-      "Loan management with due date tracking",
-      "Member registration and profile management",
+      "Dual architecture: Original Web Forms + Migrated ASP.NET Core 8 Razor Pages",
+      "Public book browsing with advanced search and filtering",
+      "Member registration and secure authentication system",
+      "Admin panel with complete CRUD operations for books, authors, and publishers",
+      "Book issuing system with due date tracking and member management",
+      "Password hashing with SHA256 and salt for security",
+      "Parameterized SQL queries preventing SQL injection",
+      "Role-based access control with session management",
+      "Dark-themed responsive UI using Bootstrap 5 and DataTables",
     ],
-    challenges: "Designing the database schema to handle complex relationships between books, members, and loans while maintaining data integrity was challenging.",
-    learnings: "This project strengthened my skills in .NET development, SQL database design, and building multi-role applications. I gained experience in implementing CRUD operations efficiently and managing database relationships.",
+    challenges: "Successfully migrating from ASP.NET Web Forms to ASP.NET Core 8 while preserving all functionality, database schema, and security features. Maintaining session-based authentication and ensuring compatibility with existing SQL Server database required careful architectural planning.",
+    learnings: "This migration project deepened my understanding of both legacy ASP.NET Web Forms and modern ASP.NET Core architecture. I gained experience in framework migration, preserving database compatibility, implementing security best practices, and maintaining feature parity across different .NET versions.",
     screenshots: [
       { src: `${base}projects/library-management/HomePage.png`, caption: "Home Page" },
       { src: `${base}projects/library-management/Sign Up.png`, caption: "Sign Up" },
